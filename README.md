@@ -24,6 +24,9 @@ This repository contains end-to-end tests for the Swag Labs application using **
    ```bash
    npx playwright test
 
+5. **Failing test**
+I've implemented one test that is failing specifically just to be able to get the screenshots and traces on CI
+
 ## Tech Details
 
 1. **About usage of POM**
