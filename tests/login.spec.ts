@@ -26,4 +26,10 @@ test.describe('Login funcionality tests', () => {
     await loginPage.login(testData.USERS.LOCKED_OUT, testData.PASSWORDS.DEFAULT);
     await loginPage.errorMesageExpectVisible('Sorry, this user has been locked out.')
   });
+
+  test('Failing test to verify CI screenshots and traces', async () => {
+
+    await loginPage.login(testData.USERS.LOCKED_OUT, testData.PASSWORDS.DEFAULT);
+    await inventoryPage.expectInventoryPageVisible();
+  });
 })
