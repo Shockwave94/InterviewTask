@@ -30,4 +30,4 @@ This repository contains end-to-end tests for the Swag Labs application using **
 Tests are organized with the **Page Object Model (POM)** design pattern to improve maintainability and readability across the test suite.
 
 2. **Github Actions**
-Project contains basic implementation of the github actions with all of the necessary steps installation, execution, artifact storage.
+Project contains basic implementation of the github actions with all of the necessary steps installation, execution, artifact storage. I Could add way more stuff like linting, sharding of the tests but taking into account scope of this project it obviously does not make sense.
