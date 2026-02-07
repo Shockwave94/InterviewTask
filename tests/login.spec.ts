@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../pages/loginPage'
-import { InventoryPage } from '../pages/inventoryPage'
+import { LoginPage } from './pages/loginPage'
+import { InventoryPage } from './pages/inventoryPage'
 import * as testData from './helpers/testData';
 
 test.describe('Login funcionality tests', () => {

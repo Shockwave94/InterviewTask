@@ -1,36 +1,28 @@
-import { test } from '@playwright/test';
-import { LoginPage } from '../pages/loginPage'
-import { InventoryPage } from '../pages/inventoryPage'
-import { CartPage } from '../pages/cartPage'
-import { CheckoutOnePage } from '../pages/checkoutOnePage'
+import { LoginPage } from './pages/loginPage'
+import { InventoryPage } from './pages/inventoryPage'
+import { CartPage } from './pages/cartPage'
+import { CheckoutOnePage } from './pages/checkoutOnePage'
 import * as testData from './helpers/testData';
+import { test } from './fixtures/login.fixture';
+
 
 test.describe('Inventory funcionality tests', () => {
-  let loginPage: LoginPage;
-  let inventoryPage: InventoryPage;
   let cartPage: CartPage;
   let checkoutOnePage: CheckoutOnePage;
 
   test.beforeEach(async ({ page }) => {
-    loginPage = new LoginPage(page)
-    inventoryPage = new InventoryPage(page)
     cartPage = new CartPage(page)
     checkoutOnePage = new CheckoutOnePage(page)
-    await loginPage.goto();
-    await loginPage.loginPageVisilbe();
-    await loginPage.login(testData.USERS.STANDARD, testData.PASSWORDS.DEFAULT);
-    await inventoryPage.expectInventoryPageVisible();
-
   })
 
-  test('Should add product to cart', async () => {
+  test('Should add product to cart', async ({ inventoryPage }) => {
     await inventoryPage.addProductToCart('sauce-labs-backpack')
     await inventoryPage.addProductToCart('sauce-labs-bolt-t-shirt')
 
     await inventoryPage.expectCartCount('2')
   });
 
-  test('Should do the checkout succesfully', async () => {
+  test('Should do the checkout succesfully', async ({ inventoryPage }) => {
     await inventoryPage.addProductToCart('sauce-labs-backpack')
     await inventoryPage.addProductToCart('sauce-labs-bolt-t-shirt')
     await inventoryPage.expectCartCount('2')
