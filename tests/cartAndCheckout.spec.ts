@@ -1,8 +1,5 @@
-import { LoginPage } from './pages/loginPage'
-import { InventoryPage } from './pages/inventoryPage'
 import { CartPage } from './pages/cartPage'
 import { CheckoutOnePage } from './pages/checkoutOnePage'
-import * as testData from './helpers/testData';
 import { test } from './fixtures/login.fixture';
 
 
